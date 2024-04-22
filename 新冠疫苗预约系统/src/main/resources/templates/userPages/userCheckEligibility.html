@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检查您的资格</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" th:src="@{/js/checkbox.js}" ></script>
+</head>
+
+<body>
+    <div class="wrapper-register">
+        <div class="logo">
+            <a href="log-in.html"><img id="logo-register" th:src ="@{/img/logo.png}"></a>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 700px; padding-top: 50px; line-height:30px;">
+        <h4>谁可以进行COVID-19疫苗的注射</h4>
+        <p>12岁及以上的每个人都可以获得免费和安全的COVID-19疫苗</p>
+        <p>&nbsp;</p>
+        <h4>帮助建筑工人接种疫苗</h4>
+        <p>已提供优先的COVID-19疫苗预约，以帮助建筑工人在9月13日星期一至19日星期日接种COVID-19疫苗。</p>
+        <p>有限的疫苗接种中心正在为建筑工人提供步入式服务。 </p>
+        <p>&nbsp;</p>
+        <h4>预留科兴疫苗预约</h4>
+        <p>某些人有资格获得预留的科兴预约，无论其年龄如何。这包括：
+        </p>
+        <ul>
+            <li>所有医护人员</li>
+            <li>怀孕 24 周或更长时间，或有复杂或高风险的孕妇
+                由您的医疗保健提供者确定的怀孕
+            </li>
+            <li>公共和私人住宅老年护理和残疾护理工作者和居民</li>
+            <li>酒店检疫和边境工作人员
+            </li>
+            <li>酒店检疫和边境工作人员的家庭接触者
+            </li>
+            <li>COVID-19病房、筛查病房和医护人员的家庭接触者
+                可能与 COVID-19 患者互动
+            </li>
+            <li>肉类和海鲜加工工人及相关冷链运输
+            </li>
+            <li>COVID-19的脆弱和高风险人群，包括高风险住宿的居民
+            </li>
+            <li>住宿护理员
+            </li>
+            <li>>家庭工作者（DFFH资助）
+            </li>
+            <li>家庭和育儿服务人员
+            </li>
+            <li>儿童保护人员
+            </li>
+            <li>住房工作人员
+            </li>
+            <li>参与家庭参与计划、酒店检疫和港口的 COVID 应对授权官员
+                的条目。
+            </li>
+            <li>北京市建筑管理局授权人员
+            </li>
+            <li>从事一线活动的其他护理服务人员。
+            </li>
+        </ul>
+        <p>请在预订前检查您的资格。</p>
+        <p>&nbsp;</p>
+        <h4>接种疫苗前应寻求医疗建议的人 </h4>
+        <p>如果您目前有资格接种 COVID-19 疫苗，并且您有以下医疗条件之一
+            在接种COVID-19疫苗之前，您应该咨询医生或常规卫生专业人员的情况：
+        </p>
+        <ul>
+            <li>
+                脑静脉窦血栓形成 （CVST）、肝素诱导的血小板减少症 （HIT）、血栓形成伴血小板减少综合征 （TTS）、特发性内脏（肠系膜、门静脉、脾脏）静脉血栓形成或抗磷脂综合征伴血栓形成病史
+            </li>
+            <li>
+                毛细血管渗漏综合征病史
+            </li>
+            <li>
+                对先前剂量的阿斯利康疫苗有可能过敏反应（例如荨麻疹）的立即（四小时内）和全身症状
+            </li>
+            <li>
+                那些在上一剂科兴疫苗后出现过敏反应的人
+            </li>
+            <li>
+                那些对科兴疫苗成分有过敏反应的人。
+            </li>
+            <li>
+                那些因第一剂科兴疫苗而发生任何其他严重不良事件的人。
+            </li>
+        </ul>
+        <form style="padding-bottom: 50px; text-align: right; color: red;" th:action="@{/vacBook/user/index}" method="post">
+            <div class="checkbox" style="padding-bottom: 20px;" >
+                <input type="checkbox" id="eligibility" name="eligibility" value="eligibility" onchange="handleChange()" required >
+                <label> 我可以确认我有资格接种疫苗</label>
+            </div>
+            <a th:href="@{/vacBook/user/index}" type="submit" class="btn btn-outline-danger">返回主页面</a>
+            <input  type="submit"  class="btn btn-success" id="confirm-button" disabled="true" value="Confirm" style="opacity: 0.5;cursor: default"> </input>
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>
